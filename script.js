@@ -3,7 +3,7 @@ let computerScore = 0;
 let round = 0;
 document.getElementById("human-score").innerHTML = humanScore.toString();
 document.getElementById("computer-score").innerHTML = computerScore.toString();
-document.getElementById("round-coutner").innerHTML = round.toString();
+document.getElementById("round-counter").innerHTML = round.toString();
 
 // Gets the computer choice randomly and displays choice in span
 function getComputerChoice() {
@@ -30,7 +30,8 @@ function getHumanChoice(choice) {
     let humChoice = choice;
     document.getElementById("human-choice").innerHTML = humChoice;
     console.log(choice);
-    playRound(humChoice, getComputerChoice());
+    let comChoice = getComputerChoice();
+    playGame(humChoice, comChoice);
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -40,7 +41,7 @@ function playRound(humanChoice, computerChoice) {
         humanScore++;
         round++;
         document.getElementById("human-score").innerHTML = humanScore.toString();
-        document.getElementById("round-coutner").innerHTML = round.toString();
+        document.getElementById("round-counter").innerHTML = round.toString();
         console.log(humanScore, round, computerScore);
     } else if (humanChoice === 'paper' && computerChoice === 'rock') {
         Number(humanScore);
@@ -48,7 +49,7 @@ function playRound(humanChoice, computerChoice) {
         humanScore++;
         round++;
         document.getElementById("human-score").innerHTML = humanScore.toString();
-        document.getElementById("round-coutner").innerHTML = round.toString();
+        document.getElementById("round-counter").innerHTML = round.toString();
         console.log(humanScore, round, computerScore);
     } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
         Number(humanScore);
@@ -56,7 +57,7 @@ function playRound(humanChoice, computerChoice) {
         humanScore++;
         round++;
         document.getElementById("human-score").innerHTML = humanScore.toString();
-        document.getElementById("round-coutner").innerHTML = round.toString();
+        document.getElementById("round-counter").innerHTML = round.toString();
         console.log(humanScore, round, computerScore);
     } else if (humanChoice === computerChoice) {
         console.log('tied');
@@ -66,11 +67,52 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
         round++;
         document.getElementById("computer-score").innerHTML = computerScore.toString();
-        document.getElementById("round-coutner").innerHTML = round.toString();
+        document.getElementById("round-counter").innerHTML = round.toString();
         console.log(humanScore, round, computerScore);
     }
+    return Number(round), Number(humanScore), Number(computerScore);
 }
 
-// console.log(getComputerChoice());
+function playGame(humanChoice, computerChoice) {
+    let rockButton = document.getElementById('rock-button');
+    let paperButton = document.getElementById('paper-button');
+    let scissorsButton = document.getElementById('scissors-button');
+    let restartButton = document.getElementById('restart-button');
 
+    playRound(humanChoice, computerChoice);
+    if (round === 5) {
+        rockButton.style.display = 'none';
+        paperButton.style.display = 'none';
+        scissorsButton.style.display = 'none';
+        restartButton.style.display = 'inline-block';
 
+        if (humanScore > computerScore) {
+            alert('Game Over! You won!');
+        } else {
+            alert('Game Over! You lost!')
+        }
+    } else {
+        console.log('game running');
+    }
+
+}
+
+function handleRestart() {
+    // Resetting counters
+    humanScore = 0;
+    computerScore = 0;
+    round = 0;
+    document.getElementById("human-score").innerHTML = humanScore.toString();
+    document.getElementById("computer-score").innerHTML = computerScore.toString();
+    document.getElementById("round-counter").innerHTML = round.toString();
+
+    // Resetting buttons
+    let rockButton = document.getElementById('rock-button');
+    let paperButton = document.getElementById('paper-button');
+    let scissorsButton = document.getElementById('scissors-button');
+    let restartButton = document.getElementById('restart-button');
+    rockButton.style.display = 'inline-block';
+    paperButton.style.display = 'inline-block';
+    scissorsButton.style.display = 'inline-block';
+    restartButton.style.display = 'none';
+}

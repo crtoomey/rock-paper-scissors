@@ -63,3 +63,26 @@ playRound(humanChoice, computerChoice) {\
 }\
 
 CALL playRound(humanChoice, computerChoice)
+
+## Function for an entire game of rock, paper, scissors (5 rounds)
+
+playGame() {\
+    FOR EACH round\
+        CALL playRound()\
+    ENDFOR\
+    IF humanScore > computerScore THEN\
+        ALERT human wins\
+    ELSE\
+        ALERT computer wins\
+    ENDIF\
+}\
+
+CALL playGame()
+
+## Function to restart the game
+
+handleRestart() {\
+    CALCULATE reset for round and score counters\
+    DISPLAY rock, paper, scissors buttons\
+    HIDE restart button\
+}

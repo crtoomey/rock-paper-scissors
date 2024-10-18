@@ -1,5 +1,9 @@
 let humanScore = 0;
 let computerScore = 0;
+let round = 0;
+document.getElementById("human-score").innerHTML = humanScore.toString();
+document.getElementById("computer-score").innerHTML = computerScore.toString();
+document.getElementById("round-coutner").innerHTML = round.toString();
 
 // Gets the computer choice randomly and displays choice in span
 function getComputerChoice() {
@@ -16,6 +20,7 @@ function getComputerChoice() {
         comChoice = 'something went wrong';
     }
     document.getElementById("computer-choice").innerHTML = comChoice;
+    return comChoice;
 }
 
 
@@ -25,8 +30,47 @@ function getHumanChoice(choice) {
     let humChoice = choice;
     document.getElementById("human-choice").innerHTML = humChoice;
     console.log(choice);
-    getComputerChoice();
+    playRound(humChoice, getComputerChoice());
 }
 
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === 'rock' && computerChoice === 'scissors') {
+        Number(humanScore);
+        Number(round);
+        humanScore++;
+        round++;
+        document.getElementById("human-score").innerHTML = humanScore.toString();
+        document.getElementById("round-coutner").innerHTML = round.toString();
+        console.log(humanScore, round, computerScore);
+    } else if (humanChoice === 'paper' && computerChoice === 'rock') {
+        Number(humanScore);
+        Number(round);
+        humanScore++;
+        round++;
+        document.getElementById("human-score").innerHTML = humanScore.toString();
+        document.getElementById("round-coutner").innerHTML = round.toString();
+        console.log(humanScore, round, computerScore);
+    } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
+        Number(humanScore);
+        Number(round);
+        humanScore++;
+        round++;
+        document.getElementById("human-score").innerHTML = humanScore.toString();
+        document.getElementById("round-coutner").innerHTML = round.toString();
+        console.log(humanScore, round, computerScore);
+    } else if (humanChoice === computerChoice) {
+        console.log('tied');
+    } else {
+        Number(computerScore);
+        Number(round);
+        computerScore++;
+        round++;
+        document.getElementById("computer-score").innerHTML = computerScore.toString();
+        document.getElementById("round-coutner").innerHTML = round.toString();
+        console.log(humanScore, round, computerScore);
+    }
+}
 
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
+
+

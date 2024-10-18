@@ -1,6 +1,6 @@
 # rock-paper-scissors
 
-A JavaScript project from The Odin Project.
+A simple JavaScript project from The Odin Project that lets a user play Rock, Paper, Scissors against a 'computer'. This is not a portfolio project, but I may make it look nicer in the future 
 
 # Pseudo code
 

@@ -7,8 +7,8 @@ A JavaScript project from The Odin Project.
 ## Function for computer turn
 
 getComputerTurn {\
-    let number = 0\
-    number = CALCULATE randomNum\
+    let randomNum = 0\
+    randomNum = CALCULATE random number\
     output = ''\
     IF randomNum === 1 THEN\
         output = 'rock'\

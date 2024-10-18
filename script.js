@@ -1,22 +1,32 @@
+let humanScore = 0;
+let computerScore = 0;
 
-// Gets the computer choice randomly
+// Gets the computer choice randomly and displays choice in span
 function getComputerChoice() {
     let randomNum = 0;
-    let output = '';
+    let comChoice = '';
     randomNum = Math.floor(Math.random() * 3) + 1; // generate number from 1 to 3
     if (randomNum === 1) {
-        output = 'rock';
+        comChoice = 'rock';
     } else if (randomNum === 2) {
-        output = 'paper';
+        comChoice = 'paper';
     } else if (randomNum === 3) {
-        output = 'scissors';
+        comChoice = 'scissors';
     } else {
-        output = 'something went wrong';
+        comChoice = 'something went wrong';
     }
-    return output;
+    document.getElementById("computer-choice").innerHTML = comChoice;
 }
 
 
 
-console.log();
+// Gets the human choice based on which button is clicked and displays choice in span
+function getHumanChoice(choice) {
+    let humChoice = choice;
+    document.getElementById("human-choice").innerHTML = humChoice;
+    console.log(choice);
+    getComputerChoice();
+}
+
+
 console.log(getComputerChoice());

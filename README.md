@@ -24,7 +24,7 @@ getComputerChoice {\
 \
 CALL getComputerChoice
 
-# Function for human choice
+## Function for human choice
 
 getHumanChoice {\
     output = ''\
@@ -41,3 +41,6 @@ getHumanChoice {\
 }\
 \
 CALL getHumanChoice
+
+## Function for a single round of rock, paper, scissors
+

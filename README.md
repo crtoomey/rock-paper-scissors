@@ -6,7 +6,7 @@ A JavaScript project from The Odin Project.
 
 ## Function for computer turn
 
-getComputerTurn {\
+getComputerChoice {\
     let randomNum = 0\
     randomNum = CALCULATE random number\
     output = ''\
@@ -22,4 +22,22 @@ getComputerTurn {\
     console.log(output)\
 }\
 \
-CALL getComputerTurn
+CALL getComputerChoice
+
+# Function for human choice
+
+getHumanChoice {\
+    output = ''\
+    IF rock button is clicked THEN\
+        output = 'rock'\
+    ELSE paper button is clicked THEN\
+        output = 'paper'\
+    ELSE scissors button is clicked THEN\
+        output = 'scissors'\
+    ELSE\
+        output = 'something went wrong'\
+    ENDIF\
+    console.log(output)\
+}\
+\
+CALL getHumanChoice

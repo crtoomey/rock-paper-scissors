@@ -1,5 +1,6 @@
 
-function getComputerTurn() {
+// Gets the computer choice randomly
+function getComputerChoice() {
     let randomNum = 0;
     let output = '';
     randomNum = Math.floor(Math.random() * 3) + 1; // generate number from 1 to 3
@@ -15,4 +16,7 @@ function getComputerTurn() {
     return output;
 }
 
-console.log(getComputerTurn())
+
+
+console.log();
+console.log(getComputerChoice());
